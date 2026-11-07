@@ -217,3 +217,46 @@
   window.addEventListener('resize', requestParallax, { passive: true });
   updateParallax();
 })();
+
+// Schedule page view switcher: By Day / By Class / Calendar.
+(() => {
+  const viewer = document.querySelector('[data-schedule-viewer]');
+  if (!viewer) return;
+  const tabs = [...viewer.querySelectorAll('[data-schedule-tab]')];
+  const panels = [...viewer.querySelectorAll('[data-schedule-panel]')];
+  const validViews = new Set(tabs.map(tab => tab.dataset.scheduleTab));
+
+  const activateView = (view, { focus = false } = {}) => {
+    if (!validViews.has(view)) view = 'day';
+    tabs.forEach(tab => {
+      const active = tab.dataset.scheduleTab === view;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && focus) tab.focus();
+    });
+    panels.forEach(panel => { panel.hidden = panel.dataset.schedulePanel !== view; });
+    try { localStorage.setItem('kihonScheduleView', view); } catch (_) {}
+  };
+
+  let initialView = 'day';
+  try {
+    const saved = localStorage.getItem('kihonScheduleView');
+    if (saved && validViews.has(saved)) initialView = saved;
+  } catch (_) {}
+  activateView(initialView);
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateView(tab.dataset.scheduleTab));
+    tab.addEventListener('keydown', event => {
+      if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      let next = index;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      activateView(tabs[next].dataset.scheduleTab, { focus: true });
+    });
+  });
+})();
