@@ -498,72 +498,53 @@
           </div>
         </div>
 
-        <div class="schedule-board reveal">
-          <section class="schedule-group" aria-labelledby="kids-schedule-title">
-            <div class="schedule-group-head">
-              <span class="schedule-number" aria-hidden="true">01</span>
-              <div>
-                <p class="schedule-kicker">Youth Training</p>
-                <h3 id="kids-schedule-title">Kids Classes</h3>
-              </div>
-            </div>
+        <div class="schedule-viewer reveal home-schedule-viewer" data-schedule-viewer>
+    <div class="schedule-view-toolbar" role="tablist" aria-label="Choose how to view the class schedule">
+      <button class="schedule-view-tab is-active" type="button" role="tab" id="schedule-tab-day" aria-selected="true" aria-controls="schedule-view-day" data-schedule-tab="day"><span class="schedule-view-icon" aria-hidden="true">☰</span><span>By Day</span></button>
+      <button class="schedule-view-tab" type="button" role="tab" id="schedule-tab-class" aria-selected="false" aria-controls="schedule-view-class" data-schedule-tab="class"><span class="schedule-view-icon" aria-hidden="true">道</span><span>By Class</span></button>
+      <button class="schedule-view-tab" type="button" role="tab" id="schedule-tab-calendar" aria-selected="false" aria-controls="schedule-view-calendar" data-schedule-tab="calendar"><span class="schedule-view-icon" aria-hidden="true">▦</span><span>Calendar</span></button>
+    </div>
 
-            <div class="schedule-days">
-              <div class="schedule-day">
-                <h4>Monday / Wednesday / Friday</h4>
-                <dl>
-                  <div><dt><strong>Kids Muay Thai</strong></dt><dd>4:00pm – 5:00pm</dd></div>
-                  <div><dt><strong>Kids Brazilian Jiu-Jitsu / Judo</strong></dt><dd>5:00pm – 6:00pm</dd></div>
-                </dl>
-              </div>
+    <div class="schedule-view-panel" id="schedule-view-day" role="tabpanel" aria-labelledby="schedule-tab-day" data-schedule-panel="day">
+      <div class="schedule-board">
+        <section class="schedule-group"><div class="schedule-group-head"><span class="schedule-number">01</span><div><p class="schedule-kicker">Youth Training</p><h3>Kids Classes</h3></div></div><div class="schedule-days"><div class="schedule-day"><h4>Monday / Wednesday / Friday</h4><dl><div><dt><strong>Kids Muay Thai</strong></dt><dd>4:00pm – 5:00pm</dd></div><div><dt><strong>Kids Brazilian Jiu-Jitsu / Judo</strong></dt><dd>5:00pm – 6:00pm</dd></div></dl></div><div class="schedule-day"><h4>Tuesday / Thursday</h4><dl><div><dt><strong>Mini Ninjas MMA</strong><span>Ages 4–5</span></dt><dd>4:10pm – 5:00pm</dd></div><div><dt><strong>Little Ninjas MMA</strong><span>Ages 6–8</span></dt><dd>5:00pm – 6:00pm</dd></div><div><dt><strong>Intermediate Ninjas MMA</strong><span>Ages 9–12</span></dt><dd>6:00pm – 7:00pm</dd></div></dl></div></div></section>
+        <section class="schedule-group"><div class="schedule-group-head"><span class="schedule-number">02</span><div><p class="schedule-kicker">Adult Training</p><h3>Adult Schedule</h3></div></div><div class="schedule-days"><div class="schedule-day"><h4>Monday / Wednesday / Friday</h4><dl><div><dt><strong>Adult Muay Thai</strong></dt><dd>6:00pm – 7:20pm</dd></div><div><dt><strong>Adult Brazilian Gi Jiu-Jitsu / Judo</strong></dt><dd>7:20pm – 8:45pm</dd></div></dl></div><div class="schedule-day"><h4>Tuesday / Thursday</h4><dl><div><dt><strong>Adult No-Gi Jiu-Jitsu &amp; Submission Wrestling</strong></dt><dd>7:00pm – 8:10pm</dd></div><div><dt><strong>Adult Muay Thai / MMA</strong></dt><dd>8:10pm – 9:20pm</dd></div></dl></div></div></section>
+      </div>
+    </div>
 
-              <div class="schedule-day">
-                <h4>Tuesday / Thursday</h4>
-                <dl>
-                  <div><dt><strong>Mini Ninjas MMA</strong><span>Ages 4–5</span></dt><dd>4:10pm – 5:00pm</dd></div>
-                  <div><dt><strong>Little Ninjas MMA</strong><span>Ages 6–8</span></dt><dd>5:00pm – 6:00pm</dd></div>
-                  <div><dt><strong>Intermediate Ninjas MMA</strong><span>Ages 9–12</span></dt><dd>6:00pm – 7:00pm</dd></div>
-                </dl>
-              </div>
-            </div>
-          </section>
+    <div class="schedule-view-panel" id="schedule-view-class" role="tabpanel" aria-labelledby="schedule-tab-class" data-schedule-panel="class" hidden>
+      <div class="schedule-by-class">
+        <section class="class-view-group"><div class="class-view-group-head"><p class="schedule-kicker">Youth Training</p><h3>Kids &amp; Youth Classes</h3></div><div class="class-view-grid">
+          <article class="class-view-card"><span class="class-view-mark">MT</span><div><h4>Kids Muay Thai</h4><p class="class-view-age">Kids &amp; youth</p><dl><div><dt>Monday</dt><dd>4:00pm – 5:00pm</dd></div><div><dt>Wednesday</dt><dd>4:00pm – 5:00pm</dd></div><div><dt>Friday</dt><dd>4:00pm – 5:00pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">BJJ</span><div><h4>Kids Brazilian Jiu-Jitsu / Judo</h4><p class="class-view-age">Kids &amp; youth</p><dl><div><dt>Monday</dt><dd>5:00pm – 6:00pm</dd></div><div><dt>Wednesday</dt><dd>5:00pm – 6:00pm</dd></div><div><dt>Friday</dt><dd>5:00pm – 6:00pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">04</span><div><h4>Mini Ninjas MMA</h4><p class="class-view-age">Ages 4–5</p><dl><div><dt>Tuesday</dt><dd>4:10pm – 5:00pm</dd></div><div><dt>Thursday</dt><dd>4:10pm – 5:00pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">06</span><div><h4>Little Ninjas MMA</h4><p class="class-view-age">Ages 6–8</p><dl><div><dt>Tuesday</dt><dd>5:00pm – 6:00pm</dd></div><div><dt>Thursday</dt><dd>5:00pm – 6:00pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">09</span><div><h4>Intermediate Ninjas MMA</h4><p class="class-view-age">Ages 9–12</p><dl><div><dt>Tuesday</dt><dd>6:00pm – 7:00pm</dd></div><div><dt>Thursday</dt><dd>6:00pm – 7:00pm</dd></div></dl></div></article>
+        </div></section>
+        <section class="class-view-group"><div class="class-view-group-head"><p class="schedule-kicker">Adult Training</p><h3>Adult Classes</h3></div><div class="class-view-grid">
+          <article class="class-view-card"><span class="class-view-mark">MT</span><div><h4>Adult Muay Thai</h4><dl><div><dt>Monday</dt><dd>6:00pm – 7:20pm</dd></div><div><dt>Wednesday</dt><dd>6:00pm – 7:20pm</dd></div><div><dt>Friday</dt><dd>6:00pm – 7:20pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">GI</span><div><h4>Adult Brazilian Gi Jiu-Jitsu / Judo</h4><dl><div><dt>Monday</dt><dd>7:20pm – 8:45pm</dd></div><div><dt>Wednesday</dt><dd>7:20pm – 8:45pm</dd></div><div><dt>Friday</dt><dd>7:20pm – 8:45pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">NG</span><div><h4>Adult No-Gi Jiu-Jitsu &amp; Submission Wrestling</h4><dl><div><dt>Tuesday</dt><dd>7:00pm – 8:10pm</dd></div><div><dt>Thursday</dt><dd>7:00pm – 8:10pm</dd></div></dl></div></article>
+          <article class="class-view-card"><span class="class-view-mark">MMA</span><div><h4>Adult Muay Thai / MMA</h4><dl><div><dt>Tuesday</dt><dd>8:10pm – 9:20pm</dd></div><div><dt>Thursday</dt><dd>8:10pm – 9:20pm</dd></div></dl></div></article>
+        </div></section>
+      </div>
+    </div>
 
-          <section class="schedule-group" aria-labelledby="adult-schedule-title">
-            <div class="schedule-group-head">
-              <span class="schedule-number" aria-hidden="true">02</span>
-              <div>
-                <p class="schedule-kicker">Adult Training</p>
-                <h3 id="adult-schedule-title">Adult Schedule</h3>
-              </div>
-            </div>
+    <div class="schedule-view-panel" id="schedule-view-calendar" role="tabpanel" aria-labelledby="schedule-tab-calendar" data-schedule-panel="calendar" hidden>
+      <div class="calendar-view-note"><strong>Weekly calendar</strong><span>Scroll sideways on smaller screens to see the full week.</span></div>
+      <div class="schedule-calendar-scroll" tabindex="0" aria-label="Weekly class calendar; scroll horizontally on smaller screens">
+        <div class="schedule-calendar">
+          <section class="calendar-day"><header><span>MON</span><strong>Monday</strong></header><div class="calendar-events"><article class="calendar-event youth"><time>4:00–5:00</time><h4>Kids Muay Thai</h4></article><article class="calendar-event youth"><time>5:00–6:00</time><h4>Kids BJJ / Judo</h4></article><article class="calendar-event adult"><time>6:00–7:20</time><h4>Adult Muay Thai</h4></article><article class="calendar-event adult"><time>7:20–8:45</time><h4>Adult Gi BJJ / Judo</h4></article></div></section>
+          <section class="calendar-day"><header><span>TUE</span><strong>Tuesday</strong></header><div class="calendar-events"><article class="calendar-event youth"><time>4:10–5:00</time><h4>Mini Ninjas MMA</h4><p>Ages 4–5</p></article><article class="calendar-event youth"><time>5:00–6:00</time><h4>Little Ninjas MMA</h4><p>Ages 6–8</p></article><article class="calendar-event youth"><time>6:00–7:00</time><h4>Intermediate Ninjas MMA</h4><p>Ages 9–12</p></article><article class="calendar-event adult"><time>7:00–8:10</time><h4>Adult No-Gi BJJ &amp; Submission Wrestling</h4></article><article class="calendar-event adult"><time>8:10–9:20</time><h4>Adult Muay Thai / MMA</h4></article></div></section>
+          <section class="calendar-day"><header><span>WED</span><strong>Wednesday</strong></header><div class="calendar-events"><article class="calendar-event youth"><time>4:00–5:00</time><h4>Kids Muay Thai</h4></article><article class="calendar-event youth"><time>5:00–6:00</time><h4>Kids BJJ / Judo</h4></article><article class="calendar-event adult"><time>6:00–7:20</time><h4>Adult Muay Thai</h4></article><article class="calendar-event adult"><time>7:20–8:45</time><h4>Adult Gi BJJ / Judo</h4></article></div></section>
+          <section class="calendar-day"><header><span>THU</span><strong>Thursday</strong></header><div class="calendar-events"><article class="calendar-event youth"><time>4:10–5:00</time><h4>Mini Ninjas MMA</h4><p>Ages 4–5</p></article><article class="calendar-event youth"><time>5:00–6:00</time><h4>Little Ninjas MMA</h4><p>Ages 6–8</p></article><article class="calendar-event youth"><time>6:00–7:00</time><h4>Intermediate Ninjas MMA</h4><p>Ages 9–12</p></article><article class="calendar-event adult"><time>7:00–8:10</time><h4>Adult No-Gi BJJ &amp; Submission Wrestling</h4></article><article class="calendar-event adult"><time>8:10–9:20</time><h4>Adult Muay Thai / MMA</h4></article></div></section>
+          <section class="calendar-day"><header><span>FRI</span><strong>Friday</strong></header><div class="calendar-events"><article class="calendar-event youth"><time>4:00–5:00</time><h4>Kids Muay Thai</h4></article><article class="calendar-event youth"><time>5:00–6:00</time><h4>Kids BJJ / Judo</h4></article><article class="calendar-event adult"><time>6:00–7:20</time><h4>Adult Muay Thai</h4></article><article class="calendar-event adult"><time>7:20–8:45</time><h4>Adult Gi BJJ / Judo</h4></article></div></section>
+        </div>
+      </div>
+      <div class="calendar-legend"><span><i class="youth"></i>Youth training</span><span><i class="adult"></i>Adult training</span></div>
+    </div>
 
-            <div class="schedule-days">
-              <div class="schedule-day">
-                <h4>Monday / Wednesday / Friday</h4>
-                <dl>
-                  <div><dt><strong>Adult Muay Thai</strong></dt><dd>6:00pm – 7:20pm</dd></div>
-                  <div><dt><strong>Adult Brazilian Gi Jiu-Jitsu / Judo</strong></dt><dd>7:20pm – 8:45pm</dd></div>
-                </dl>
-              </div>
-
-              <div class="schedule-day">
-                <h4>Tuesday / Thursday</h4>
-                <dl>
-                  <div><dt><strong>Adult No-Gi Jiu-Jitsu &amp; Submission Wrestling</strong></dt><dd>7:00pm – 8:10pm</dd></div>
-                  <div><dt><strong>Adult Muay Thai / MMA</strong></dt><dd>8:10pm – 9:20pm</dd></div>
-                </dl>
-              </div>
-            </div>
-          </section>
-
-          <aside class="private-training-callout" aria-label="Private lesson rates">
-            <div>
-              <p class="schedule-kicker">One-on-One Training</p>
-              <h3>Private Lessons</h3>
-              <p>Registered student personals are <strong>$35 per hour.</strong><br>Non-Registered personals are <strong>$55 per hour.</strong></p>
-            </div>
-            <a class="button button-primary" href="/contact/">Contact Us to Reserve Your Lesson</a>
-          </aside>
+    <aside class="private-training-callout schedule-private"><div><p class="schedule-kicker">One-on-One Training</p><h3>Private Lessons</h3><p>Registered student personals are <strong>$35 per hour.</strong><br>Non-Registered personals are <strong>$55 per hour.</strong></p></div><a class="button button-primary" href="/contact/">Contact Us to Reserve Your Lesson</a></aside>
         </div>
       </div>
       <div class="section-divider divider-slash to-paper" aria-hidden="true"><span class="divider-mark mark-right" data-parallax data-axis="x" data-speed="-0.04"><b lang="ja">基本</b><small lang="ja">きほん</small></span></div>
